@@ -5,10 +5,13 @@
 (cask-initialize)
 
 (setq ns-use-native-fullscreen nil)
+(tool-bar-mode -1)
+(menu-bar-mode -1)
 
 (defun after-init ()
   (load-theme 'zenburn)
-  (toggle-frame-fullscreen))
+  (if (fboundp 'toggle-frame-fullscreen)
+      (toggle-frame-fullscreen)))
 
 (add-hook 'after-init-hook 'after-init)
 
@@ -27,7 +30,7 @@
 (setq jedi:setup-keys t)
 (setq jedi:complete-on-dot t)
 
-
+(require 'comint)
 (setq comint-password-prompt-regexp
       (concat
        "\\("
