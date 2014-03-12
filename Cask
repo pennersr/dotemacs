@@ -6,3 +6,4 @@
 (depends-on "flycheck")
 (depends-on "ido-ubiquitous")
 (depends-on "smex")
+(depends-on "jedi")
