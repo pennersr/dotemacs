@@ -7,3 +7,4 @@
 (depends-on "ido-ubiquitous")
 (depends-on "smex")
 (depends-on "jedi")
+(depends-on "smartparens")
