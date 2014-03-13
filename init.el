@@ -4,32 +4,50 @@
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
 
+;; UI
 (setq ns-use-native-fullscreen nil)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
+(scroll-bar-mode -1)
 
-(defun after-init ()
+(defun ui-after-init ()
   (load-theme 'zenburn)
   (if (fboundp 'toggle-frame-fullscreen)
       (toggle-frame-fullscreen)))
 
-(add-hook 'after-init-hook 'after-init)
+(add-hook 'after-init-hook 'ui-after-init)
 
-(setq enable-recursive-minibuffers t)
-(set-variable 'flycheck-highlighting-mode 'lines)
-(add-hook 'after-init-hook 'global-flycheck-mode)
+;; Editing
+(setq-default indent-tabs-mode nil)
+(show-paren-mode t)
+(smartparens-global-mode t)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
 
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+(eval-after-load "ace-jump-mode"
+  '(ace-jump-mode-enable-mark-sync))
+(define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
+
+
+;; Minibuffer
+(setq enable-recursive-minibuffers t)
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
-
 (ido-mode)
 (ido-ubiquitous-mode)
+(setq ido-enable-flex-matching t)
 
+;; Python
+(require 'python-mode)
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:setup-keys t)
 (setq jedi:complete-on-dot t)
+(set-variable 'flycheck-highlighting-mode 'lines)
+(add-hook 'after-init-hook 'global-flycheck-mode)
 
+;; Shell
 (require 'comint)
 (setq comint-password-prompt-regexp
       (concat

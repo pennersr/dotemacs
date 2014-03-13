@@ -1,5 +1,6 @@
 (source gnu)
 (source melpa)
+(source marmalade)
 
 (depends-on "zenburn-theme")
 (depends-on "magit")
@@ -8,3 +9,5 @@
 (depends-on "smex")
 (depends-on "jedi")
 (depends-on "smartparens")
+(depends-on "ace-jump-mode")
+(depends-on "python-mode")
