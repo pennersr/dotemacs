@@ -18,9 +18,18 @@
 (add-hook 'after-init-hook 'ui-after-init)
 
 ;; Editing
+(require 'auto-complete)
+
+;; dirty fix for having AC everywhere
+(define-globalized-minor-mode real-global-auto-complete-mode
+  auto-complete-mode (lambda ()
+                       (if (not (minibufferp (current-buffer)))
+                         (auto-complete-mode 1))
+                       ))
+(real-global-auto-complete-mode t)
+
 (setq-default indent-tabs-mode nil)
 (show-paren-mode t)
-(smartparens-global-mode t)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
@@ -38,6 +47,9 @@
 (ido-mode)
 (ido-ubiquitous-mode)
 (setq ido-enable-flex-matching t)
+
+;; JS
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 ;; Python
 (require 'python-mode)
@@ -70,7 +82,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("11d069fbfb0510e2b32a5787e26b762898c7e480364cbc0779fe841662e4cf5d" default))))
+    ("f0ea6118d1414b24c2e4babdc8e252707727e7b4ff2e791129f240a2b3093e32" "11d069fbfb0510e2b32a5787e26b762898c7e480364cbc0779fe841662e4cf5d" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

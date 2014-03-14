@@ -8,6 +8,6 @@
 (depends-on "ido-ubiquitous")
 (depends-on "smex")
 (depends-on "jedi")
-(depends-on "smartparens")
 (depends-on "ace-jump-mode")
 (depends-on "python-mode")
+(depends-on "js2-mode")
