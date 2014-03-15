@@ -12,7 +12,8 @@
     (scroll-bar-mode -1))
 
 (defun ui-after-init ()
-  (load-theme 'zenburn)
+  (if (display-graphic-p)
+      (load-theme 'zenburn))
   (if (fboundp 'toggle-frame-fullscreen)
       (toggle-frame-fullscreen)))
 
