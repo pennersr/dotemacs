@@ -29,6 +29,8 @@
                          (auto-complete-mode 1))
                        ))
 (real-global-auto-complete-mode t)
+(define-key ac-completing-map [return] nil)
+(define-key ac-completing-map "\r" nil)
 
 (setq-default indent-tabs-mode nil)
 (show-paren-mode t)
