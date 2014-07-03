@@ -11,3 +11,5 @@
 (depends-on "ace-jump-mode")
 (depends-on "python-mode")
 (depends-on "js2-mode")
+(depends-on "php-mode")
+(depends-on "yaml-mode")
