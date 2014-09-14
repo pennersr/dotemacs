@@ -49,6 +49,7 @@
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
 (ido-mode)
+(ido-everywhere)
 (ido-ubiquitous-mode)
 (setq ido-enable-flex-matching t)
 
