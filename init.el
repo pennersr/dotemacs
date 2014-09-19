@@ -53,6 +53,9 @@
 (ido-ubiquitous-mode)
 (setq ido-enable-flex-matching t)
 
+;; Projects
+(projectile-global-mode)
+
 ;; JS
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 

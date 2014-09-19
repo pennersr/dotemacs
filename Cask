@@ -10,6 +10,7 @@
 (depends-on "js2-mode")
 (depends-on "magit")
 (depends-on "php-mode")
+(depends-on "projectile")
 (depends-on "python-mode")
 (depends-on "smex")
 (depends-on "yaml-mode")
