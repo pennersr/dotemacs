@@ -22,6 +22,16 @@
 ;; Editing
 (require 'auto-complete)
 
+;; Navigation
+(windmove-default-keybindings)
+;; Windmove in terminal
+(global-set-key (kbd "C-c <left>")  'windmove-left)
+(global-set-key (kbd "C-c <right>") 'windmove-right)
+(global-set-key (kbd "C-c <up>")    'windmove-up)
+(global-set-key (kbd "C-c <down>")  'windmove-down)
+
+
+
 ;; dirty fix for having AC everywhere
 (define-globalized-minor-mode real-global-auto-complete-mode
   auto-complete-mode (lambda ()
