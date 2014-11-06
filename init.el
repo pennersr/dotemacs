@@ -77,7 +77,12 @@
 (set-variable 'flycheck-highlighting-mode 'lines)
 (add-hook 'after-init-hook 'global-flycheck-mode)
 
+
+
 ;; Shell
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
+
 (require 'comint)
 (setq comint-password-prompt-regexp
       (concat
