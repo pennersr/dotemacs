@@ -19,6 +19,9 @@
 
 (add-hook 'after-init-hook 'ui-after-init)
 
+;; Dired
+(setq dired-auto-revert-buffer t)
+
 ;; Editing
 (require 'auto-complete)
 
