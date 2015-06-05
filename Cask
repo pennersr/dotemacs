@@ -12,6 +12,7 @@
 (depends-on "php-mode")
 (depends-on "projectile")
 (depends-on "python-mode")
+(depends-on "py-yapf")
 (depends-on "smex")
 (depends-on "yaml-mode")
 (depends-on "zenburn-theme")
