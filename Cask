@@ -8,6 +8,7 @@
 (depends-on "ido-ubiquitous")
 (depends-on "jedi")
 (depends-on "js2-mode")
+(depends-on "web-beautify")
 (depends-on "magit")
 (depends-on "php-mode")
 (depends-on "projectile")
