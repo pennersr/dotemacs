@@ -122,6 +122,10 @@
        "\\)"
        ))
 
+;; Vagrant-tramp
+(eval-after-load 'tramp
+  '(vagrant-tramp-enable))
+
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
