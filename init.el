@@ -104,12 +104,6 @@
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
 
-(autoload 'bash-completion-dynamic-complete
-  "bash-completion"
-  "BASH completion hook")
-(add-hook 'shell-dynamic-complete-functions
-  'bash-completion-dynamic-complete)
-
 (require 'comint)
 (setq comint-password-prompt-regexp
       (concat
