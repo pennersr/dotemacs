@@ -3,6 +3,7 @@
 (source marmalade)
 
 (depends-on "ace-jump-mode")
+(depends-on "beacon")
 (depends-on "exec-path-from-shell")
 (depends-on "flycheck")
 (depends-on "flymake-jshint")
