@@ -20,6 +20,7 @@
 (depends-on "smex")
 (depends-on "vagrant-tramp")
 (depends-on "web-beautify")
+(depends-on "web-mode")
 (depends-on "wgrep")
 (depends-on "yaml-mode")
 (depends-on "zenburn-theme")

@@ -93,8 +93,28 @@
 (require 'projectile)
 (projectile-global-mode)
 
+;; Flycheck
+(require 'flycheck)
+(add-hook 'after-init-hook 'global-flycheck-mode)
+
 ;; JS
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+
+;; Web
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+(setq-default flycheck-disabled-checkers
+  (append flycheck-disabled-checkers
+    '(javascript-jshint)))
+(flycheck-add-mode 'javascript-eslint 'web-mode)
 
 ;; Python
 (require 'python-mode)
@@ -102,7 +122,6 @@
 (setq jedi:setup-keys t)
 (setq jedi:complete-on-dot t)
 (set-variable 'flycheck-highlighting-mode 'lines)
-(add-hook 'after-init-hook 'global-flycheck-mode)
 (require 'py-yapf)
 
 ;; Shell
