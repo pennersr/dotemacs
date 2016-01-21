@@ -117,12 +117,16 @@
 (flycheck-add-mode 'javascript-eslint 'web-mode)
 
 ;; Python
+(require 'python)
 (require 'python-mode)
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:setup-keys t)
 (setq jedi:complete-on-dot t)
 (set-variable 'flycheck-highlighting-mode 'lines)
 (require 'py-yapf)
+(defun my-shell-mode-hook ()
+  (add-hook 'comint-output-filter-functions 'python-pdbtrack-comint-output-filter-function t))
+(add-hook 'shell-mode-hook 'my-shell-mode-hook)
 
 ;; Shell
 (when (memq window-system '(mac ns))
