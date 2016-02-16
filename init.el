@@ -26,6 +26,9 @@
 ;; Editing
 (require 'auto-complete)
 
+(require 'fill-column-indicator)
+(setq fci-rule-column 80)
+
 ;; Navigation
 (windmove-default-keybindings)
 ;; Windmove in terminal
@@ -126,6 +129,8 @@
 (require 'python)
 (require 'python-mode)
 (add-hook 'python-mode-hook 'jedi:setup)
+(add-hook 'python-mode-hook 'fci-mode)
+
 (setq jedi:setup-keys t)
 (setq jedi:complete-on-dot t)
 (set-variable 'flycheck-highlighting-mode 'lines)
