@@ -97,6 +97,11 @@
 (require 'projectile)
 (projectile-global-mode)
 
+;; Neotree
+(require 'neotree)
+(setq neo-smart-open t)
+(setq projectile-switch-project-action 'neotree-projectile-action)
+
 ;; Flycheck
 (require 'flycheck)
 (add-hook 'after-init-hook 'global-flycheck-mode)

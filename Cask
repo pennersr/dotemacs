@@ -13,6 +13,7 @@
 (depends-on "jedi")
 (depends-on "js2-mode")
 (depends-on "magit")
+(depends-on "neotree")
 (depends-on "nyan-mode")
 (depends-on "php-mode")
 (depends-on "projectile")
