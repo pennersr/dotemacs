@@ -4,6 +4,7 @@
 
 (depends-on "ace-jump-mode")
 (depends-on "beacon")
+(depends-on "editorconfig")
 (depends-on "exec-path-from-shell")
 (depends-on "fill-column-indicator")
 (depends-on "flycheck")

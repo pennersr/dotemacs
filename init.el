@@ -25,6 +25,8 @@
 
 ;; Editing
 (require 'auto-complete)
+(require 'editorconfig)
+(editorconfig-mode 1)
 
 (require 'fill-column-indicator)
 (setq fci-rule-column 80)
